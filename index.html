@@ -8,37 +8,49 @@
 </head>
 <body>
     <main class="container">
+        
         <section id="screen-intro" class="screen active">
-            <div class="instr-card">
-                <h2>Instruções</h2>
-                <p>Durante o teste você verá um círculo aparecer no centro da tela em duas cores diferentes. Reaja conforme as regras abaixo:</p>
-                <div class="rules-container">
-                    <div class="rule rule-go">
-                        <div class="circle-icon go"></div>
-                        <span>Círculo <strong>VERDE</strong>: Pressione a <strong>BARRA DE ESPAÇO</strong> o mais rápido possível.</span>
+            <div class="panel">
+                <h2 class="title">Treino - Go / No-Go</h2>
+                
+                <div class="instructions-content" style="text-align: left;">
+                    <p style="text-align: center; margin-bottom: 15px;">Durante o teste você verá um círculo aparecer no centro da tela em duas cores diferentes. Reaja conforme as regras abaixo:</p>
+                    
+                    <div class="rules-container">
+                        <div class="rule rule-go">
+                            <div class="circle-icon go"></div>
+                            <span>Círculo <strong>VERDE</strong>:<br> Pressione a <strong>BARRA DE ESPAÇO</strong> o mais rápido possível.</span>
+                        </div>
+                        <div class="rule rule-nogo">
+                            <div class="circle-icon nogo"></div>
+                            <span>Círculo <strong>VERMELHO</strong>:<br> <strong>NÃO</strong> aperte nada. Aguarde ele sumir.</span>
+                        </div>
                     </div>
-                    <div class="rule rule-nogo">
-                        <div class="circle-icon nogo"></div>
-                        <span>Círculo <strong>VERMELHO</strong>: <strong>NÃO</strong> aperte nada. Aguarde ele sumir.</span>
+
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border);">
+                        <h3 style="color: var(--cyan); text-align: center; margin-bottom: 15px; font-size: 1.2rem;">⚠️ IMPORTANTE</h3>
+                        
+                        <ul class="info-list" style="max-width: 420px; margin: 0 auto; text-align: left;">
+                            <li style="margin-bottom: 8px;"><strong>ATENÇÃO:</strong> Mantenha o foco durante todo o teste.</li>
+                            <li style="margin-bottom: 8px;"><strong>SEM PAUSAS:</strong> Não é possível interromper o teste.</li>
+                            <li><strong>POSIÇÃO:</strong> Mantenha o dedo sobre a barra de espaço.</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div style="margin-top: 30px;">
+                    <button id="btn-trial" class="space-key-btn btn-full">ESTOU PRONTO (ESPAÇO)</button>
+                </div>
             </div>
-            <div class="instr-card important-card">
-                <h2>⚠️ IMPORTANTE</h2>
-                <ul class="info-list">
-                    <li><strong>ATENÇÃO:</strong> Mantenha o foco durante todo o teste.</li>
-                    <li><strong>SEM PAUSAS:</strong> Não é possível interromper o teste.</li>
-                    <li><strong>POSIÇÃO:</strong> Mantenha o dedo sobre a barra de espaço.</li>
-                </ul>
-            </div>
-            <button id="btn-trial" class="btn-main">Iniciar Treino (ESPAÇO)</button>
         </section>
+
         <section id="screen-post-trial" class="screen hidden">
-            <div class="panel" style="text-align: center;">
+            <div class="panel">
                 <h2 class="title">Treino Finalizado</h2>
-                <p style="margin-bottom: 20px; color: var(--text-dim);">Prepare-se para o teste.</p>
-                <p id="timer-msg">O botão será liberado em:</p>
-                <button id="btn-start-official" class="space-key-btn">AGUARDE</button>
+                <p style="margin-bottom: 20px; color: var(--text-dim);">Prepare-se para o teste oficial.</p>
+                
+                <p id="timer-msg" style="margin-bottom: 15px;">O botão será liberado em:</p>
+                <button id="btn-start-official" class="space-key-btn btn-full">AGUARDE</button>
             </div>
         </section>
 
@@ -50,19 +62,24 @@
         <section id="screen-estimation" class="screen hidden">
             <div class="panel">
                 <h2 class="title">Fim do Teste</h2>
-                <p>Quanto tempo você acha que durou o teste oficial? (em minutos)</p>
+                <p style="margin-bottom: 15px;">Quanto tempo você acha que durou o teste oficial? (em minutos)</p>
+                
                 <input type="number" id="input-time-est" placeholder="Ex: 10">
-                <button id="btn-submit-est" class="space-key-btn btn-full">CONTINUAR</button>
+                <button id="btn-submit-est" class="space-key-btn btn-full" style="margin-top: 10px;">CONTINUAR</button>
             </div>
         </section>
 
         <section id="screen-results" class="screen hidden">
-            <h2 class="title">Teste Concluído</h2>
-            <p>Clique no botão abaixo para baixar o arquivo CSV com os resultados.</p>
-            <button id="btn-download-csv" class="space-key-btn btn-full">Baixar Resultados (CSV)</button>
-            <button onclick="location.reload()" class="space-key-btn btn-full" style="margin-top:10px">REINICIAR</button>
+            <div class="panel">
+                <h2 class="title">Teste Concluído</h2>
+                <p style="margin-bottom: 20px;">Clique no botão abaixo para baixar o arquivo CSV com os resultados.</p>
+                
+                <button id="btn-download-csv" class="space-key-btn btn-full">BAIXAR RESULTADOS (CSV)</button>
+                <button onclick="location.reload()" class="space-key-btn btn-full" style="margin-top:15px; background: #334155;">REINICIAR</button>
+            </div>
         </section>
-    </div>
+
+    </main>
     <script src="src/js/script.js"></script>
 </body>
 </html>
